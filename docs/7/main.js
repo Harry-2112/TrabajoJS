@@ -1,20 +1,20 @@
-function calcular(){
+function calcular() {
     let numero = document.getElementById("numero").value;
     let error = document.getElementById("error");
-    let total= document.getElementById("total");
-    let arrayNumbers = [];
-    arrayNumbers.push(numero);
-    console.log(arrayNumbers['0']);
-    let numero1=parseInt(arrayNumbers[0].value)**2;
-    let numero2=parseInt(arrayNumbers[1].value)**2;
-    let numero3=parseInt(arrayNumbers[2].value)**2;
+    let total = document.getElementById("total");
 
-    let suma = numero1+numero2+numero3;
+    if (numero.length != 3) {
+        error.innerHTML = "Ingrese un numero de 3 digitos";
+    } else {
+        let numero1 = parseInt(numero.charAt(0));
+        let numero2 = parseInt(numero.charAt(1));
+        let numero3 = parseInt(numero.charAt(2));
 
-    if (arrayNumbers.length=3) {
-        total.innerHTML= suma;
+        let total1=numero1**2;
+        let total2=numero2**2;
+        let total3=numero3**2;
+        let suma=total1+total2+total3;
+        total.innerHTML=suma;
     }
-    else{
-        error.innerHTML="el numero deve contener 3 digitos"
-    }
+
 }
